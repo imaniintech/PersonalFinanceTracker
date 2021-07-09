@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import LoginPage from './forms/LoginPage'
 
 
 class MainInfo extends Component {
@@ -14,7 +14,8 @@ class MainInfo extends Component {
     render() {
         return (
             <div className="mainInfo">
-                Main Information
+                <LoginPage />
+
             </div>
         )
     }
