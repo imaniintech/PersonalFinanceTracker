@@ -12,13 +12,21 @@ class LoginPage extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form className="loginForm">
 
-                    <input type="text" className="email" placeholder="Email" name="email" />
+                    <div className="form-group">
+                        <label htmlFor="email"></label>
+                        <input type="text" className="email" placeholder="Email" name="email" />
+                    </div>
 
-                    <input type="text" className="password" placeholder="Password" name="password" />
+                    <div className="form-group">
+                        <label htmlFor="password"></label>
+                        <input type="text" className="password" placeholder="Password" name="password" />
+                    </div>
 
-                    <input type="submit" className="submit" value="Submit" />
+                    <div className="form-group">
+                        <input type="submit" className="submitButton" value="Submit" />
+                    </div>
                 </form>
             </div>
         )

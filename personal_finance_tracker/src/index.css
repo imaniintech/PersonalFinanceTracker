@@ -21,3 +21,15 @@ h1{
   width: 50%;
   margin: auto;
 }
+
+.email{
+  width: 100%;
+}
+
+.password{
+  width: 100%;
+}
+
+.submitButton{
+  width: 100%;
+}
