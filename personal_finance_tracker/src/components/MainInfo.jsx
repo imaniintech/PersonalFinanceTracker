@@ -16,8 +16,7 @@ class MainInfo extends Component {
             <div className="mainInfo">
                 <LoginPage />
                 <div className="accountSetup">
-                    Don't have an account?
-                    <button className="signUp">Sign Up</button>
+                    Don't have an account? <button className="signUp">Sign Up</button>
                 </div>
 
             </div>
