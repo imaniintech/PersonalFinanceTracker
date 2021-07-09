@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
+import MainInfo from './components/MainInfo';
+
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Personal Finance Tracker</h1>
+        <MainInfo />
       </div>
     )
   }
-}
+};
 
-export default App
+export default App;
