@@ -24,7 +24,11 @@ class RegisterPage extends Component {
         firebase1.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((user) => {
             let currentUser = firebase1.auth().currentUser;
             currentUser.update({
-                firstName: this.state.firstName
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                email: this.state.email,
+                password: this.state.password
+
             })
         }).catch((error) => {
             this.setState({ errorsInFireBase: error.message })
@@ -59,7 +63,7 @@ class RegisterPage extends Component {
 
                     <div className="form-group">
                         <label htmlFor="password"></label>
-                        <input type="text" className="password" placeholder="Password" name="password"
+                        <input type="text" className="password" placeholder="Password" type="password" name="password"
                             onChange={this.handleChange} value={this.state.password}
                         />
                     </div>

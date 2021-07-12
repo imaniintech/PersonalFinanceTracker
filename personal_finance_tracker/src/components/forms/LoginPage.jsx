@@ -21,7 +21,7 @@ class LoginPage extends Component {
 
                     <div className="form-group">
                         <label htmlFor="password"></label>
-                        <input type="text" className="password" placeholder="Password" name="password" />
+                        <input type="text" className="password" placeholder="Password" type="password" name="password" />
                     </div>
 
                     <div className="form-group">
