@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase1 from './firebase/Firebase';
 import LoginPage from './forms/LoginPage';
 import RegisterPage from './forms/RegisterPage';
+import PersonalTracker from './forms/PersonalTracker';
 
 
 class MainInfo extends Component {
@@ -41,22 +42,25 @@ class MainInfo extends Component {
 
         return (
             <div>
-                < div className="mainInfo" >
-                    {toggleForms}
-                    {/* <LoginPage /> */}
-                    {!this.state.changeForms ?
-                        (
-                            < div className="accountSetup">
-                                Don't have an account? <button onClick={() => this.changeForms(!this.state.changeForms ? 'registerAccount' : 'loginAccount')} className="signUp">Sign Up</button>
-                            </div>
-                        ) : (
-                            < div className="accountSetup">
-                                Already have an account? <button onClick={() => this.changeForms(!this.state.changeForms ? 'registerAccount' : 'loginAccount')} className="signUp">Sign In</button>
-                            </div>
-                        )
-                    }
-                </div >
+                {!this.state.user ?
+                    < div className="mainInfo" >
+                        {toggleForms}
+                        {/* <LoginPage /> */}
+                        {!this.state.changeForms ?
+                            (
+                                < div className="accountSetup">
+                                    Don't have an account? <button onClick={() => this.changeForms(!this.state.changeForms ? 'registerAccount' : 'loginAccount')} className="signUp">Sign Up</button>
+                                </div>
+                            ) : (
+                                < div className="accountSetup">
+                                    Already have an account? <button onClick={() => this.changeForms(!this.state.changeForms ? 'registerAccount' : 'loginAccount')} className="signUp">Sign In</button>
+                                </div>
+                            )
+                        }
+                    </div > : <PersonalTracker />
+                }
             </div >
+
 
         )
     }
