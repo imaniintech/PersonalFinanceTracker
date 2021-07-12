@@ -44,7 +44,7 @@ class PersonalTracker extends Component {
                 </div>
 
                 <div className="allTransactions">
-                    <h4>List of Transactions</h4>
+                    <h4 className="list">List of Transactions</h4>
                     <ul>
                         <li>
                             <div>Deposit</div>
