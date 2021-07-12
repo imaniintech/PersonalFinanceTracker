@@ -22,6 +22,10 @@ h1{
   margin: 200px auto;
 }
 
+.name{
+  width: 100%;
+}
+
 .email{
   width: 100%;
 }
