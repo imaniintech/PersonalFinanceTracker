@@ -9,12 +9,16 @@ class RegisterPage extends Component {
         lastName: '',
         email: '',
         password: ''
-    }
+    };
 
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
+    };
+
+    registerAccount = e => {
+        e.preventDefault();
     }
 
     render() {
@@ -51,7 +55,7 @@ class RegisterPage extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" className="submitButton" value="Submit" />
+                        <input onClick={this.registerAccount} type="submit" className="submitButton" value="Submit" />
                     </div>
                 </form>
             </div>
