@@ -22,7 +22,11 @@ h1{
   margin: 200px auto;
 }
 
-.name{
+.firstName{
+  width: 100%;
+}
+
+.lastName{
   width: 100%;
 }
 

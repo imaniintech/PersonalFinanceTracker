@@ -5,7 +5,8 @@ class RegisterPage extends Component {
 
 
     state = {
-        name: '',
+        fistName: '',
+        lastName: '',
         email: '',
         password: ''
     }
@@ -16,8 +17,13 @@ class RegisterPage extends Component {
                 <form className="loginForm">
 
                     <div className="form-group">
-                        <label htmlFor="name"></label>
-                        <input type="text" className="name" placeholder="Full Name" name="name" />
+                        <label htmlFor="firstName"></label>
+                        <input type="text" className="firstName" placeholder="First Name" name="name" />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="lastName"></label>
+                        <input type="text" className="lastName" placeholder="Last Name" name="name" />
                     </div>
 
                     <div className="form-group">
