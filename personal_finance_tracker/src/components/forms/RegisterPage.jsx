@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase1 from '../firebase/Firebase';
 
 
 class RegisterPage extends Component {
@@ -8,7 +9,8 @@ class RegisterPage extends Component {
         fistName: '',
         lastName: '',
         email: '',
-        password: ''
+        password: '',
+        errorsInFireBase: ''
     };
 
     handleChange = e => {
@@ -19,6 +21,14 @@ class RegisterPage extends Component {
 
     registerAccount = e => {
         e.preventDefault();
+        firebase1.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((user) => {
+            let currentUser = firebase1.auth().currentUser;
+            currentUser.update({
+                firstName: this.state.firstName
+            })
+        }).catch((error) => {
+            this.setState({ errorsInFireBase: error.message })
+        });
     }
 
     render() {
