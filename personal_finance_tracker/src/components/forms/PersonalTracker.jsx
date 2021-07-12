@@ -10,6 +10,15 @@ class PersonalTracker extends Component {
         firebase1.auth().signOut()
     }
 
+    state = {
+        availableMoney: 0,
+        transactionList: [],
+        nameOfTransaction: '',
+        amountOfTransaction: '',
+        type: '',
+        currentUserID: firebase1.auth().currentUser.uid
+    }
+
 
     render() {
         return (
