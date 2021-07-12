@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase1 from './firebase/Firebase';
 import LoginPage from './forms/LoginPage';
 import RegisterPage from './forms/RegisterPage';
 
@@ -11,13 +12,27 @@ class MainInfo extends Component {
         userLoggedIn: 1,
         loading: true,
         changeForms: false //shows login first -will be able to set an if statement
+    };
+
+    componentDidMount() {
+        this.listenForAuth();
+    };
+
+    listenForAuth() {
+        firebase1.auth().onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({ user })
+            } else {
+                this.setState({ user: undefined })
+            }
+        });
     }
 
 
     changeForms = (switchForm) => {
         console.log(switchForm);
         this.setState({ changeForms: switchForm === 'registerAccount' ? true : false })
-    }
+    };
 
     render() {
         const toggleForms = !this.state.changeForms ? <LoginPage /> : <RegisterPage />
