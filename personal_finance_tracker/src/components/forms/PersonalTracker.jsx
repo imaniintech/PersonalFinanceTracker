@@ -20,15 +20,15 @@ class PersonalTracker extends Component {
                     <button className="signOut" onClick={this.signOut}>Sign Out</button>
                 </div>
 
-                <div className="total"><h3>$1000</h3></div>
+                <div className="total"><h5>$1000</h5></div>
 
                 <div className="transactionForm">
-                    <div className="newTransactionForm">
+                    <div className="newTransactionInfo">
 
                         <form>
                             <input placeholder="Transaction Name" type="text" name="nameOfTransaction" />
 
-                            <div className="">
+                            <div className="transCluster">
                                 <select name="type">
                                     <option value="0">Transaction Type?</option>
                                     <option value="0">Deposit</option>
@@ -41,6 +41,16 @@ class PersonalTracker extends Component {
                         </form>
 
                     </div>
+                </div>
+
+                <div className="allTransactions">
+                    <h4>List of Transactions</h4>
+                    <ul>
+                        <li>
+                            <div>Deposit</div>
+                            <div> +20 </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         )
