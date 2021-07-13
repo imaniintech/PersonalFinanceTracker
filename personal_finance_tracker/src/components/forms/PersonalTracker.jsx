@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase1 from '../firebase/Firebase';
-
+import TransactionList from '../TransactionList';
 
 
 class PersonalTracker extends Component {
@@ -50,7 +50,7 @@ class PersonalTracker extends Component {
             })
             // console.log(transactionState);
             firebase1.database().ref('TransactionList/' + currentUserID).push({
-                newID: transactionState.length + 1,
+                newID: transactionState.length,
                 name: nameOfTransaction,
                 amount: amountOfTransaction,
                 type: transactionType,
@@ -98,7 +98,7 @@ class PersonalTracker extends Component {
                             <div className="transCluster">
                                 <select name="type"
                                     onChange={this.handleChange('transactionType')} value={this.state.transactionType}>
-                                    <option value="0">Transaction Type</option>
+                                    <option value="0">Transaction Type?</option>
                                     <option value="deposit">Deposit</option>
                                     <option value="expense">Expense</option>
                                 </select>
@@ -116,10 +116,19 @@ class PersonalTracker extends Component {
                 <div className="allTransactions">
                     <h4 className="list">List of Transactions</h4>
                     <ul>
-                        <li>
+                        {
+                            Object.keys(this.state.transactionList).map((id) => (
+                                <TransactionList
+                                    type={this.state.transactionList[id].type}
+                                    name={this.state.transactionList[id].name}
+                                    amount={this.state.transactionList[id].amount}
+                                />
+                            ))
+                        }
+                        {/* <li>
                             <div>Deposit</div>
                             <div> +20 </div>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>
