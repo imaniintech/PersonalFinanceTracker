@@ -31,7 +31,7 @@ class MainInfo extends Component {
 
 
     changeForms = (switchForm) => {
-        console.log(switchForm);
+        // console.log(switchForm);
         this.setState({ changeForms: switchForm === 'registerAccount' ? true : false })
     };
 

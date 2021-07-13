@@ -35,7 +35,7 @@ class PersonalTracker extends Component {
             nameOfTransaction,
             amountOfTransaction,
             transactionType,
-            currentUserID
+            currentUserID,
         } = this.state;
 
         if (nameOfTransaction && amountOfTransaction && transactionType) {
@@ -45,9 +45,29 @@ class PersonalTracker extends Component {
                 name: nameOfTransaction,
                 amount: amountOfTransaction,
                 type: transactionType,
-                currentID: currentUserID
+                currentID: currentUserID,
             })
-            console.log(transactionState)
+            // console.log(transactionState);
+            firebase1.database().ref('TransactionList/' + currentUserID).push({
+                newID: transactionState.length,
+                name: nameOfTransaction,
+                amount: amountOfTransaction,
+                type: transactionType,
+                currentID: currentUserID
+            }).then((data) => {
+                ///used to receive callback
+                console.log("callback went through successfully");
+
+                this.setState({
+                    nameOfTransaction: '',
+                    amountOfTransaction: '',
+                    transactionType: '',
+                    transactionList: transactionState,
+                    availableMoney: transactionType === 'deposit' ? availableMoney + parseFloat(amountOfTransaction) : availableMoney - parseFloat(amountOfTransaction),
+                })
+            }).then((error) => {
+                console.log("There's an error: ", error);
+            })
         }
     };
 
