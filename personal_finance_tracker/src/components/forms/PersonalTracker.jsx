@@ -50,7 +50,7 @@ class PersonalTracker extends Component {
             })
             // console.log(transactionState);
             firebase1.database().ref('TransactionList/' + currentUserID).push({
-                newID: transactionState.length,
+                newID: transactionState.length + 1,
                 name: nameOfTransaction,
                 amount: amountOfTransaction,
                 type: transactionType,
@@ -86,7 +86,7 @@ class PersonalTracker extends Component {
                     <button className="signOut" onClick={this.signOut}>Sign Out</button>
                 </div>
 
-                <div className="total"><h5>$1000</h5></div>
+                <div className="total"><h5>${this.state.availableMoney}</h5></div>
 
                 <div className="transactionForm">
                     <div className="newTransactionInfo">
