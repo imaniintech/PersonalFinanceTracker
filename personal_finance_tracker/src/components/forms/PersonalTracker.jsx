@@ -84,9 +84,10 @@ class PersonalTracker extends Component {
                                 <input placeholder="Amount" type="text" name="amountOfTransaction"
                                     onChange={this.handleChange('amountOfTransaction')} value={this.state.amountOfTransaction} />
                             </div>
-
-                            <button className="addANewTransaction" onClick={() => this.addANewTransaction()}> Add Transaction</button>
                         </form>
+
+
+                        <button className="addANewTransaction" onClick={() => this.addANewTransaction()}> Add Transaction</button>
 
                     </div>
                 </div>
