@@ -66,7 +66,7 @@ class PersonalTracker extends Component {
                     transactionList: transactionState,
                     availableMoney: transactionType === 'deposit' ? availableMoney + parseFloat(amountOfTransaction) : availableMoney - parseFloat(amountOfTransaction),
                 })
-            }).then((error) => {
+            }).catch((error) => {
                 console.log("There's an error: ", error);
             })
         }
