@@ -6,12 +6,14 @@ const TransactionList = props => {
     return (
         <div>
             <li>
-                {props.name}
-                {props.type === 'deposit' ? (
-                    <div className="deposits"> {props.amount}</div>
-                ) : (
-                    <div className="expenses"> {props.amount}</div>
-                )}
+                <div>{props.name}</div>
+                <div>
+                    {props.type === 'deposit' ? (
+                        <div className="deposits"> {props.amount}</div>
+                    ) : (
+                        <div className="expenses"> {props.amount}</div>
+                    )}
+                </div>
             </li>
         </div>
     )

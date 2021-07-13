@@ -30,6 +30,37 @@ class PersonalTracker extends Component {
     };
 
 
+    componentWillMount() {
+
+
+        const { currentUserID, availableMoney } = this.state;
+        let totalAmount = availableMoney;
+        const transactionState = this.state.transactionList;
+        firebase1.database().ref('TransactionList/' + currentUserID).once('value', (grabItemInfo) => {
+            // console.log(grabItemInfo);
+            grabItemInfo.forEach((item) => {
+
+                totalAmount =
+                    item.val().type === 'deposit' ? parseFloat(item.val().amountOfTransaction) + totalAmount : totalAmount - parseFloat(item.val().amountOfTransaction);
+
+                transactionState.push({
+                    newID: grabItemInfo.val().newID,
+                    name: grabItemInfo.val().name,
+                    amount: grabItemInfo.val().amount,
+                    type: grabItemInfo.val().type,
+                    currentID: grabItemInfo.val().currentID
+                });
+            });
+
+
+            this.setState({
+                transactionList: transactionState,
+                amount: totalAmount
+            })
+        })
+    }
+
+
     addANewTransaction = () => {
         const {
             nameOfTransaction,
@@ -71,6 +102,10 @@ class PersonalTracker extends Component {
             })
         }
     };
+
+
+
+
 
 
 
@@ -118,7 +153,7 @@ class PersonalTracker extends Component {
                     <ul>
                         {
                             Object.keys(this.state.transactionList).map((id) => (
-                                <TransactionList
+                                <TransactionList key={id}
                                     type={this.state.transactionList[id].type}
                                     name={this.state.transactionList[id].name}
                                     amount={this.state.transactionList[id].amount}
