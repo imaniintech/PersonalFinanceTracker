@@ -36,6 +36,7 @@ class PersonalTracker extends Component {
             amountOfTransaction,
             transactionType,
             currentUserID,
+            availableMoney
         } = this.state;
 
         if (nameOfTransaction && amountOfTransaction && transactionType) {
