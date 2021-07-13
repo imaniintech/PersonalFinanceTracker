@@ -1,13 +1,21 @@
 import React from 'react';
 
 
-class TransactionList extends React.Component {
+const TransactionList = props => {
 
-    render() {
-        return (
-            <div> Transaction Item</div>
-        )
-    }
+    return (
+        <div>
+            <li>
+                {props.name}
+                {props.type === 'deposit' ? (
+                    <div className="deposits"> {props.amount}</div>
+                ) : (
+                    <div className="expenses"> {props.amount}</div>
+                )}
+            </li>
+        </div>
+    )
+
 };
 
 export default TransactionList;
