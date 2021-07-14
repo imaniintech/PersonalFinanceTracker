@@ -119,7 +119,7 @@ class PersonalTracker extends Component {
             <div className="personalTracker">
 
                 <div className="dashboard">
-                    <h4>Welcome!</h4>
+                    <h4 className="welcome">Welcome!</h4>
                     <button className="signOut" onClick={this.signOut}>Sign Out</button>
                 </div>
 

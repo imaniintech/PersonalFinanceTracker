@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+
 body{
   background-color: lightcoral;
 }
@@ -58,23 +60,28 @@ h1{
 }
 
 .personalTracker{
-  background-color: #3a5054;
+  /* background-color: #3a5054; */
   padding: 30px;
   width: 50%;
   margin: 150px auto;
   box-sizing: border-box;
-  border: solid 3px #e0d4b8;
+  /* border: solid 3px #e0d4b8; */
 }
 
 .dashboard{
   display: flex;
   justify-content: space-between;
-  color: #e0d4b8;
+  color: #3a5054;
   text-shadow: 0px 2px 4px lightcoral;
 }
 
+.welcome{
+  font-family: 'Otomanopee One', sans-serif;
+}
+
 .total{
-  color: #e0d4b8;
+  font-family: 'Otomanopee One', sans-serif;
+  color: #3a5054;
   margin: 5px auto;
   text-shadow: 0px 2px 4px lightcoral;
   padding-bottom: 10px;
@@ -82,7 +89,7 @@ h1{
 
 .newTransactionInfo{
   border-radius: 10px;
-  background-color: lightcoral;
+  background-color: #3a5054;
   margin: auto;
   padding: 10px;
   text-align: center;
@@ -95,12 +102,14 @@ h1{
 
 .newTransactionInfo input{
   background-color: lightgrey;
+  color: lightcoral;
   width: 100%;
   border: solid 1px grey;
   padding: 5px;
   font-size: 12px;
 }
 .newTransactionInfo select{
+  color: lightcoral;
   cursor: pointer;
   width: 100%;
   border: solid 1px grey;
@@ -115,6 +124,7 @@ h1{
 }
 
 .addNewTransaction {
+  color: lightcoral;
   cursor: pointer;
   background-color: lightgrey;
   /* background-color: lightcoral; */
@@ -128,12 +138,14 @@ h1{
   margin: 20px 10px 0 10px;
   padding-top: 10px;
   padding-left: 10px;
-  background-color: lightcoral;
+  background-color: #3a5054;
   box-shadow: 0px 4px 10px #000000, 0px 4px 8px #e0d4b8;
+  font-family: 'Otomanopee One', sans-serif;
 }
 
 .list{
-  text-decoration: #3a5054 underline;
+  color: lightcoral;
+  text-decoration: lightcoral underline;
   font-weight: bold;
 }
 
@@ -142,7 +154,7 @@ ul{
 }
 
 li{
-  color: #3a5054;
+  color: lightcoral;
   font-weight: bold;
   display: flex;
   padding-right: 10px;
@@ -151,5 +163,14 @@ li{
 }
 
 .signOut{
-  background-color: lightcoral;
+  background-color: #3a5054;
+  color: lightcoral;
+}
+
+.deposits{
+  color: green;
+}
+
+.expenses{
+  color: red;
 }
